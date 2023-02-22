@@ -1,0 +1,22 @@
+<div class="container">
+  <div class="row">
+    <div class="box">
+      <button 
+        class="btn btn-primary"
+        (click)="onToggleDetails()"
+        > 
+          Click!
+        </button>
+        <h4 *ngIf="!toggleStatus">
+          Arsenal are sitting at top with 50 points 7 ahead of Mancity.
+        </h4>
+    </div>
+    <div *ngFor="let info of numDetails; let i=index"
+    [ngStyle]="{backgroundColor:i>3?'teal':'coral'}"
+    [ngClass]="{epl:i>5}"
+    (click)="onRemoveServer(i)"
+    >
+      {{info}}
+    </div>
+  </div>
+</div>
